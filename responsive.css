@@ -1,0 +1,259 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            width
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+/*───────────────────────────────────────────────
+  850px 
+───────────────────────────────────────────────*/
+@media only screen and (max-width: 850px){
+    .item , .noItem  {
+        font-size: 0.7em;
+    }
+    #menu {
+        font-size: 0.9em;
+    }
+    #appName {
+        font-size: 1.1em;
+    }
+
+    main {
+        grid-template-rows: 2.2fr 3fr;
+    }
+    #contentHeaders{
+        height: 18%;
+    }
+    .unselectedHeader {
+        font-size: 0.8em;
+    }
+    .selectedHeader {
+        font-size: 0.9em;
+    }
+}
+/*───────────────────────────────────────────────
+  800px 
+───────────────────────────────────────────────*/
+@media only screen and (max-width: 800px){
+    .page {
+        width: 60%;
+    }
+}
+/*───────────────────────────────────────────────
+  700px 
+───────────────────────────────────────────────*/
+@media only screen and (max-width: 700px){
+    hr {
+        font-size: 0.5em;
+    }
+    .item , .noItem{
+        font-size: 0.6em;
+    }
+    #addBtn {
+        bottom: 23%;
+    }
+    .income {
+        width: 70%;
+    }
+    #menu {
+        grid-template-rows: 5% 90% 5%;
+    }
+    #appName {
+        font-size: 1em;
+    }
+    #menuFooter p , #menuFooter button {
+        font-size: 0.8em;
+    }
+    
+}
+/*───────────────────────────────────────────────
+  600px 
+───────────────────────────────────────────────*/
+@media only screen and (min-width: 600px){
+    #menuIcom , #closeMenu{
+        display: none !important;
+    }
+    #menu {
+        display: grid;
+    }
+}
+@media only screen and (max-width: 600px){
+    main {
+        grid-template-columns: 75% 25%;
+    }
+    #chart , #content{
+        grid-column: 1/-1;
+        border: 0;
+    }
+    #contentHeaders{
+        height: 17%;
+    }
+    #menu{
+        display: none;
+        margin: 0;
+        opacity: 0.95;
+        grid-template-rows: 5% 88% 7%;
+    }
+    #menuIcon {
+        display: block;
+    }
+    #menuHeader {
+        justify-content: space-between;
+    }
+    #appName{
+        font-size: 1.3em;
+    }
+    #menuFooter p , #menuFooter button {
+        font-size: 1.1em
+    }
+
+    .income form input , .income form textarea, .income form p , .income form button {
+        font-size: 1.2em;
+    }
+    .income {
+        width: 80%;
+        border: 7px groove var(--formBorder);
+
+    }
+    .page {
+        width: 70%;
+    }
+    .paragraph {
+        font-size: 1.1em;
+    }
+}
+
+/*───────────────────────────────────────────────
+  530px 
+───────────────────────────────────────────────*/
+@media only screen and (max-width: 530px){
+    main{
+        grid-template-rows: 2.4fr 3fr;
+    }
+    #menuIcon{
+        width: 75px;
+    }
+    #addBtn {
+        bottom: 20%;
+        width: 55px;
+        height: 45px;
+    }
+    #contentHeaders{
+        height: 15%;
+    }
+    .unselectedHeader {
+        font-size: 0.7em;
+    }
+    .selectedHeader {
+        font-size: 0.8em;
+    }
+    hr {
+        font-size: 0.4em;
+    }
+    .addingForm {
+        grid-template-rows: 1fr 2fr 1fr 1fr 1fr;
+    }
+    .dateInp{
+        grid-column: 1/-1;
+    }
+    .dayBtn {
+        grid-row: 4/5;
+        grid-column: 1/2;
+    }
+    .noDate {
+        grid-row: 4/5;
+        grid-column: 2/-1;
+    }
+    .subInp , .canInp {
+        grid-row: 5/6;
+    }
+    .creditText {
+        grid-column: 1/-1;
+    }
+    .debtText {
+        grid-column: 1/-1;
+        grid-row: 4/5;
+    }
+    .prioDiv {
+        grid-row: 3/5;
+    }
+    .prioDiv input {
+        transform: scale(2.3);
+    }
+    .income {
+        border: 5px groove var(--formBorder);
+    }
+    .page div button {
+        font-size: 1.1em;
+    }
+    #menu {
+        grid-template-rows: 5% 90% 5%;
+    }
+    #menuFooter p , #menuFooter button {
+        font-size: 0.9em
+    }
+    .devInfo {
+        max-width: 85%;
+    }
+}
+/*───────────────────────────────────────────────
+  400px 
+───────────────────────────────────────────────*/
+@media only screen and (max-width: 400px){
+    .page {
+        width: 85%;
+    }
+    .page div button {
+        font-size: 1em;
+    }
+    .devInfo {
+        max-width: 95%;
+    }
+    .item {
+        margin: 15px 8px;
+        font-size: 0.55em;
+    }
+    .div1 {
+        margin: 3px 15px 5px;
+    }
+    .div2 {
+        margin: 3px 15px 5px;
+    }
+}
+/*───────────────────────────────────────────────
+  370px 
+───────────────────────────────────────────────*/
+@media only screen and (max-width: 370px){
+    main{
+        grid-template-rows: 2.7fr 3fr;
+    }
+    #menuIcon{
+        width: 65px;
+    }
+    #addBtn {
+        bottom: 20%;
+        width: 45px;
+        height: 35px;
+    }
+    /* #contentHeaders{
+        height: 12%;
+    } */
+    #appName , #ver , #developer {
+        font-size: 1.1em;
+    }
+    /* .unselectedHeader {
+        font-size: 0.6em;
+    }
+    .selectedHeader {
+        font-size: 0.7em;
+    } */
+    /* .item , .noItem{
+        font-size: 0.4em;
+    } */
+    .income form input , .income form textarea, .income form p , .income form button {
+        font-size: 1em;
+    }
+    .prioDiv input {
+        transform: scale(2);
+    }
+    .income {
+        border: 3px groove var(--formBorder);
+    }
+}

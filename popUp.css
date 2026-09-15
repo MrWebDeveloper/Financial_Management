@@ -1,0 +1,223 @@
+/*───────────────────────────────────────────────
+  Page Styles 
+───────────────────────────────────────────────*/
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--fadeColor);
+    z-index: 999;
+    backdrop-filter: blur(4px);
+}
+.page {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 50%;
+    min-width: 35%;
+    max-width: 450px;
+    height: auto;
+    max-height: 80%;
+    padding: 25px 10px 15px;
+    color: var(--pageTextColor);
+    background-image: linear-gradient(to bottom , var(--pageColor1) , var(--pageColor2));
+    border: 2px solid var(--pageBorder);
+    border-radius: 15px;
+    z-index: 1000;
+}
+.exit {
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    padding: 0px;
+    color: var(--exitColor);
+    background-color: var(--exitBg);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.exit svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/*───────────────────────────────────────────────
+  Page Elements Display
+───────────────────────────────────────────────*/
+.twoColDisplay {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.twoColDisplay button {
+    border-radius: 7px;
+}
+.oneColDisplay {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 10px;
+}
+.oneColDisplay button {
+    border-radius: 10px;
+    width: 80%;
+    max-width: 270px;
+}
+.devCol {
+    grid-template-rows: 130px 1fr 1fr !important;
+}
+.page div button {
+    font-size: 1.2em;
+    background-color: var(--popupBtnBg);
+    box-shadow: 2px 2px 2px var(--popupBtnShadow);
+    border: 1px solid var(--popupBtnBorder);
+    color: var(--popupBtnTextColor);
+    cursor: pointer;
+}
+/*───────────────────────────────────────────────
+  Page Texts 
+───────────────────────────────────────────────*/
+/* ================ Chart Information Text ================ */
+.paragraph {
+    text-align: center;
+    overflow: auto;
+    direction: var(--direction);
+    max-height: 500px;
+    font-size: 1.2em ;
+}
+.paragraph p {
+    margin: 0;
+    color: var(--pageTextColor);
+}
+/* ================ Cache Pages Texts ================ */
+.cacheText {
+    grid-column: 1/-1;
+    font-size: 1.2em;
+    padding-top: 10px;
+    margin: 0px;
+    text-align: center;
+    color: var(--pageTextColor);
+}
+
+
+
+/*───────────────────────────────────────────────
+  Page Buttons 
+───────────────────────────────────────────────*/
+.allDataDel {
+    grid-column: 1/-1;
+}
+.cancelBtn {
+    background-color: var(--canBtn) !important;
+}
+.confirmBtn {
+    background-color: var(--confirmBtn) !important;
+}
+.deleteBtn {
+    background-color: var(--deleteBtn) !important;
+}
+/* ================ File Uploading ================ */
+.fileInputDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fileInputLabel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--fileInpLableBg);
+    border: 2px solid var(--fileInpLableBorder);
+    border-top: none; border-bottom: none;
+    padding: 4px 6px;
+}
+.fileInputBtn {
+    border: 1px solid var(--popupBtnBorder);
+    border-radius: 5px;
+    padding: 3px;
+    background-color: var(--popupBtnBg);
+    color: var(--popupBtnTextColor);
+}
+.fileInputName {
+    color: var(--fileInpNameColor);
+}
+.alertText {
+    color: var(--alertColor);
+    background-color: var(--alertBg);
+    border: 1px solid var(--alertColor);
+    padding: 4px;
+    
+}
+
+/*───────────────────────────────────────────────
+  Developer about 
+───────────────────────────────────────────────*/
+/* ================ Profile ================ */
+.profile {
+    height: 120px;
+    padding: 4px;
+    border: 1px solid var(--profBorder);
+    border-radius: 50%;
+}
+/* ================ Texts ================ */
+.devText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.devName {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.devInfo {
+    margin: 15px 0;
+    max-width: 75%;
+    text-align: center;
+    font-size: 1.1em;
+}
+/* ================ Contact ================ */
+.contact {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.contact p {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.contact button {
+    min-width: 80%;
+}
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    Hover Classes
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+@media (hover: hover){
+    .exit:hover {
+        color: var(--exitColorHov);
+        background-color: var(--exitBgHov);
+    }
+    .cancelBtn:hover {
+        background-color: var(--canBtnHov) !important;
+    }
+    .confirmBtn:hover {
+        background-color: var(--confirmBtnHov) !important;
+    }
+    .deleteBtn:hover {
+        background-color: var(--deleteBtnHov) !important;
+    }
+}

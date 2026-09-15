@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
+    <link type="text/css" rel="stylesheet" href="root.css">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="menu.css">
+    <link type="text/css" rel="stylesheet" href="items.css">
+    <link type="text/css" rel="stylesheet" href="form.css">
+    <link type="text/css" rel="stylesheet" href="popUp.css">
+    <link type="text/css" rel="stylesheet" href="responsive.css">
+    <title data-lang="title">مدریت مالی</title>
+</head>
+    
+<body>
+    <!-- First Load -->
+    <script src="./jalali-moment.browser.js"></script>
+
+    <div id="fadePage"></div>
+    <main id="everyThing">
+
+        <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+
+        <header id="chart">
+            <!-- calendar -->
+            <p id="calendar"></p>
+            <!-- chart -->
+            <div id="chartLine">
+                <div id="chartCenter">
+                    <p id="balanceTitle" data-lang="balance">Balance:</p>
+                    <p id="balance" style="font-size: 1.2em;"></p>
+                </div>
+                <svg id="visibility" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
+            </div>
+            <!-- Adding Button -->
+            <svg id="addBtn" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"  fill="currentColor"><path d="M450-120v-330H120v-60h330v-330h60v330h330v60H510v330h-60Z"/></svg>
+            <!-- Content Headers -->
+            <nav id="contentHeaders">
+                <button id="income" data-lang="header1">income</button>
+                <button id="expenses" data-lang="header2">expenses</button>
+                <button id="shoppingList" data-lang="header3">To Buy</button>
+                <button id="debtsCredits" data-lang="header4">Debts & Credits</button>
+            </nav>
+
+        </header>
+
+        <div id="content" class="default">
+            <ul id="UL">
+            </ul>
+        </div>
+
+        <nav id="menu">
+
+            <div id="menuHeader">
+                <p id="appName" data-lang="title">Financial Management</p>
+                <svg id="closeMenu" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="m336-289.33 144-144 144 144L670.67-336l-144-144 144-144L624-670.67l-144 144-144-144L289.33-624l144 144-144 144L336-289.33ZM186.67-120q-27 0-46.84-19.83Q120-159.67 120-186.67v-586.66q0-27 19.83-46.84Q159.67-840 186.67-840h586.66q27 0 46.84 19.83Q840-800.33 840-773.33v586.66q0 27-19.83 46.84Q800.33-120 773.33-120H186.67Zm0-66.67h586.66v-586.66H186.67v586.66Zm0-586.66v586.66-586.66Z"/></svg>
+            </div>
+
+            <div id="menuOptions">
+                <h3 data-lang="lang">Language</h3>
+                <div class="inputBar"><select id="lang">
+                    <option value="fa" data-lang="fa"> Persian </option>
+                    <option value="en" data-lang="en"> English </option>
+                </select></div>
+
+                <h3 data-lang="date">Date Format</h3>
+                <div class="inputBar"><select id="dateFormat">
+                    <option value="1" data-lang="datePer"> Persian </option>
+                    <option value="2" data-lang="dateGre"> Gregorian </option>
+                </select></div>
+
+                <h3 data-lang="textDir">Text Direction</h3> <!-- جهت نوشتار -->
+                <div class="inputBar"><select id="textDir">
+                    <option value="1" data-lang="rtl"> Right to Left </option>
+                    <option value="2" data-lang="ltr"> Left to Right </option>
+                </select></div>
+
+                <h3 data-lang="currency">Currency</h3>
+                <div class="inputBar"><input id="cur" type="text" maxlength="12" required></div>
+                
+                <div class="chartType--TitleDisplay"><h3 data-lang="chartType" id="chartType">Chart Type</h3><button id="chartInfo">!</button></div>
+                <div class="inputBar"><select id="chart_type">
+                    <option value="1" data-lang="chart1">Type 1 (Default)</option>
+                    <option value="2" data-lang="chart2">Type 2</option>
+                    <option value="3" data-lang="chart3">Type 3</option>
+                    <option value="4" data-lang="chart4">Type 4</option>
+                </select></div>
+
+                <h3 data-lang="font">Font</h3>
+                <div class="inputBar"><select id="font">
+                    <option value="1">Default (فا) (En)</option>
+                    <option value="2">Amiri Italic (فا) (En)</option>
+                    <option value="3">Reem Kufi (فا) (En)</option>
+                    <option value="4">Nastaliq Urdu (فا)</option>
+                    <option value="5">Rakkas (فا) (En)</option>
+                    <option value="6">Charm (En)</option>
+                    <option value="7">RobotoSerif italic (En)</option>
+                    <option value="8">Inconsolata (En)</option>
+                </select></div>
+
+                <h3 data-lang="numberDisplay">Number Display</h3>
+                <div class="inputBar"><select id="numDisplay">
+                    <option value="1">۹۹٬۹۹۹</option>
+                    <option value="2">99,999</option>
+                    <option value="3">99 999</option>
+                    <option value="4">99.999</option>
+                </select></div>
+
+                <h3 data-lang="theme">Theme</h3>
+                <div class="inputBar"><select id="theme">
+                    <option value="1" data-lang="thDef">Default</option>
+                    <option value="2" data-lang="thDark">Dark</option>
+                    <option value="3" data-lang="thMocha">Mocha</option>
+                    <option value="4" data-lang="thCherry">Cherry</option>
+                    <option value="5" data-lang="thPeacock">Peacock</option>
+                </select></div>
+
+                <h3 data-lang="cache">Cache settings</h3>
+                <div class="cache">
+                    <button id="delData" data-lang="delData">Delete Data Options</button>
+                    <button id="loadData" data-lang="loadData">Upload/Download Data</button>
+                    <button id="resetMenu" data-lang="resetMenu">Reset Menu to Default</button>
+                </div>
+            </div>
+
+            <div id="menuFooter">
+                <p id="ver" data-lang="ver">Version 1.0.0</p>
+                <button id="about" data-lang="about">About</button>
+            </div>
+        </nav>
+    </main>
+    <!-- Modules -->
+    <script type="module" src="app.js"></script>
+    <script type="module" src="content.js"></script>
+    <script type="module" src="ls.js"></script>
+    <script type="module" src="items.js"></script>
+    <script type="module" src="chart.js"></script>
+    <script type="module" src="pageMaker.js"></script>
+    <script type="module" src="theme.js"></script>
+</body>
+</html>

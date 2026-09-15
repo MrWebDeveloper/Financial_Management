@@ -1,0 +1,170 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    Menu Styles
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+#menuIcon {
+    position: fixed;
+    width: 85px;
+    height: auto;
+    top: 0px;
+    display: none;
+    z-index: 10;
+    color: var(--menuIcon);
+    cursor: pointer;
+}
+#menu {
+    background: var(--sidebar) !important;
+    color: var(--menuTextColor);
+    border-right: 2px solid var(--mainBorder);
+    margin: 0 15px 0 0;
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5% 88% 7%;
+}
+.menu {
+    animation: slideInLeft 0.6s ease;
+}
+
+/*───────────────────────────────────────────────
+  Menu Header 
+───────────────────────────────────────────────*/
+#menuHeader {
+    grid-row: 1/2;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#closeMenu {
+    margin: 0;
+    top: 5px;
+    right: 5px;
+    min-width: 25px;
+    min-height: 25px;
+    width: 35px;
+    height: auto;
+    color: var(--closeMenu);
+    cursor: pointer;
+}
+#appName {
+    font-size: 1.3em;
+}
+/*───────────────────────────────────────────────
+  Menu Options 
+───────────────────────────────────────────────*/
+#menuOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    grid-row: 2/3;
+}
+/* ================ Input Bar ================ */
+.inputBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
+.inputBar select , .inputBar input {
+    width: 80%;
+    font-size: 0.9em;
+    text-align: center;
+    border-radius: 5px;
+}
+.saveBtn {
+    background: var(--saveBg) !important;
+    color: var(--saveColor) !important;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px var(--saveShadow);
+    overflow-wrap: normal !important;
+}
+
+/* ================ Chart Type ================ */
+.chartType--TitleDisplay {
+    display: flex;
+    align-items: center;
+    direction: var(--direction);
+}
+#chartInfo {
+    margin: 0 3px;
+    border-radius: 7px;
+    height: fit-content;
+    background-color: var(--chartInfoBg);
+    color: var(--chartInfoColor);
+    cursor: pointer;
+}
+/* ================ Cache ================ */
+.cache {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+.cache button {
+    border-radius: 7px;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 5px;
+    width: 80%;
+}
+
+/*───────────────────────────────────────────────
+  Menu Footer 
+───────────────────────────────────────────────*/
+#menuFooter {
+    grid-row: 3/4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+#ver {
+    margin: 0;
+    color: var(--versianColor);
+}
+#about {
+    margin: 0;
+    padding: 5px 10px;
+    border: 1px solid var(--aboutBorder);
+    border-radius: 7px;
+    background-color: var(--sidebar);
+    color: var(--aboutColor);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    Hover Classes
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+@media (hover: hover) {
+    .saveBtn:hover {
+        background: var(--saveBgHov) !important;
+        transform: translateY(-2px);
+    }
+    #about:hover {
+        background-color: var(--aboutBgHov);
+        transform: translateY(-2px);
+    }
+}

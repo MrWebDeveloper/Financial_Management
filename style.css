@@ -1,0 +1,298 @@
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    style.css For Header and program overview
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+* { 
+    user-select: none;
+    overflow-wrap: anywhere;
+}
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    Fonts
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+@font-face {
+    font-family: amiriItalic;
+    src: url(./fonts/amiriItalic.ttf) format(TrueType);
+}
+@font-face {
+    font-family: reemKufi;
+    src: url(./fonts/reemKufi.ttf) format(TrueType);
+    font-weight: 100;
+}
+@font-face {
+    font-family: nastaliqUrdu;
+    src: url(./fonts/nastaliqUrdu.ttf) format(TrueType);
+    font-weight: 400;
+    line-height: 10px;
+}
+@font-face {
+    font-family: rakkas;
+    src: url(./fonts/rakkas.ttf) format(TrueType);
+}
+@font-face {
+    font-family: charm;
+    src: url(./fonts/charm.ttf) format(TrueType);
+}
+@font-face {
+    font-family: robotoSerifItalic;
+    src: url(./fonts/robotoSerifItalic.ttf) format(TrueType);
+    font-weight: 500;
+}
+@font-face {
+    font-family: inconsolata;
+    src: url(./fonts/inconsolata.ttf) format(TrueType);
+    font-weight: 300;
+}
+.font-amiriItalic {
+    line-height: 1.3;
+}
+.font-nastaliqUrdu {
+    line-height: 1.5;
+}
+.font-nastaliqUrdu #calendar , .font-nastaliqUrdu .saveBtn {
+    line-height: 1;
+}
+.font-nastaliqUrdu #chartInfo {
+    line-height: 1.7;
+}
+.font-rakkas , .font-nastaliqUrdu #about{
+    line-height: 1.2;
+}
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    Program Page Settings
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100vh;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    font-family: var(--font);
+    background-color: var(--websiteBg);
+}
+body button , body input {
+    font-family: var(--font);
+}
+main {
+    position: relative;
+    min-height: 450px;
+    height: 100vh;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 10px 10px 20px var(--mainShadow);
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 1.8fr 3fr;
+}
+
+
+/*───────────────────────────────────────────────
+  Chart 
+───────────────────────────────────────────────*/
+#chart {
+    background-image: linear-gradient(135deg, var(--headerColor1), var(--headerColor2));
+    backdrop-filter: blur(12px);
+    position: relative;
+    grid-column: 2/-1;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10%;
+    border-left: 2px solid var(--mainBorder);
+}
+#chartLine {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px var(--chartShadow);
+    background-image: conic-gradient(
+    var(--chartColor1) 0% var(--chartPerecent),
+    var(--chartColor2) var(--chartPerecent) 100%
+  );
+}
+#chartCenter {
+    background-image: linear-gradient(135deg, var(--headerColor1), var(--headerColor2));
+    backdrop-filter: blur(12px);
+    border-radius: 50%;
+    box-shadow: 2px 2px 15px var(--chartShadow) inset;
+    width: 170px;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    direction: var(--direction);
+    cursor: pointer;
+}
+/* ================ Balance ================ */
+#balanceTitle {
+    color: var(--balanceTitle);
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+#balance {
+    color: var(--balanceColor);
+    white-space: nowrap;
+    transform-origin: center;
+    margin-top: 20px;
+}
+#visibility {
+    position: absolute;
+    width: 30px;
+    left: -5%;
+    bottom: -5%;
+    color: var(--visibility);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+/* ================ Chart Detail ================ */
+.detailPage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    direction: var(--direction);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid var(--detailBorder);
+    background-color: var(--detailBg);
+    cursor: pointer;
+}
+.chartDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 8px;
+    padding: 5px;
+    max-height: 65%;
+    height: fit-content;
+    max-width: 70%;
+    width: fit-content;
+    border: 2px solid var(--detailLines);
+    border-right:none;border-left:none;
+}
+.chartDetail li {
+    text-align: start;
+    font-size: small;
+}
+.greenNumber {
+    color: var(--detailPositive);
+}
+.redNumber {
+    color: var(--detailNegative);
+}
+/*───────────────────────────────────────────────
+  Header Options 
+───────────────────────────────────────────────*/
+/* Menu icon styles are located in menu.css */
+#calendar {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: fit-content;
+    height: 20px;
+    padding: 5px;
+    margin: 0;
+    background-color: var(--addBtnBg);
+    color: var(--calendarColor) ;
+    border: 1px solid var(--calendarBorder);
+    border-radius: 10px;
+    border-bottom-right-radius:0 ;
+    /* line-height: 1; */
+}
+#addBtn {
+    width: 60px;
+    height: 50px;
+    background-color: var(--addBtnBg);
+    color: var(--addBtnColor) ;
+    border: 2px solid var(--addBtnBorder);
+    border-radius: 40%;
+    border-bottom-right-radius:0 ;
+    border-top-left-radius:0 ;
+    position: absolute;
+    right: 10px;
+    direction: var(--direction);
+    cursor: pointer;
+    bottom: 25%;
+    transition: all 0.3s;
+}
+
+/* ================ Headers ================ */
+#contentHeaders {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    display: flex;
+}
+#contentHeaders button {
+    color: var(--headersTextColor);
+    font-family: var(--font);
+}
+.unselectedHeader {
+    width: 100%;
+    height: 100%;
+    background-color: var(--headers);
+    border: 1px solid var(--unSelectedBorder);
+    box-shadow: 1px 1px 7px inset var(--unSelectedShadow);
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.selectedHeader {
+    font-size: 1em;
+    font-weight: bold;
+    width: 90%;
+    border: 1px solid var(--selectedBorder);
+    box-shadow: 2px 2px 20px var(--selectedShadow);
+    background-color: var(--content);
+    border-radius: 10px;
+    margin: 0 1%;
+    transform: translateY(-9px);
+    transition: 
+     border  0.6s ease,
+     transform 0.4s ease,
+     box-shadow 0.4s ease, 
+     border-radius 0.4s ease;
+}
+
+/*───────────────────────────────────────────────
+  Body 
+───────────────────────────────────────────────*/
+/* Items styles are located in items.css */
+#content{
+    position: relative;
+    background-color: var(--content);
+    grid-column: 2/-1;
+    grid-row: 2/-1;
+    overflow: auto;
+    font-size: 2em;
+    border-left: 2px solid var(--mainBorder);
+}
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    Hover Classes
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+@media (hover: hover){
+    #visibility:hover {
+        color: var(--visibilityHov);
+        transform: scale(1.1);
+    }
+    #addBtn:hover {
+        color: var(--addBtnColorHov);
+        border: 2px solid var(--addBtnBorderHov);
+    }
+}
+
+
+
