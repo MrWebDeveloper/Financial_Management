@@ -25,6 +25,7 @@
 ## Demo
 # <a href="https://mrwebdeveloper.github.io/Financial_Management/">Click To Show Live Demo</a>
 
+<img width="90%" alt="demo" src="https://github.com/user-attachments/assets/aee9e4e4-d67f-4203-aa18-828d9fe712ac" />
 
 ## Contact Me
 - Email: amirhosseinwebdeveloper@gmail.com
@@ -58,7 +59,7 @@
 
 ## دمو
 # <a href="https://mrwebdeveloper.github.io/Financial_Management/">برای مشاهده نسخه آنلاین کلیک کنید</a>
-
+<img width="90%" alt="demo" src="https://github.com/user-attachments/assets/aee9e4e4-d67f-4203-aa18-828d9fe712ac" />
 
 ## تماس با من
 - ایمیل: amirhosseinwebdeveloper@gmail.com
